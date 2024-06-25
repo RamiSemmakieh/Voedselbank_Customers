@@ -1,6 +1,12 @@
+<!-- resources/views/customers/index.blade.php -->
 <x-app-layout>
     <div class="mt-16 max-w-6xl mx-auto p-6 bg-gray-800 rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold text-white mb-4">Customers List</h1>
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold text-white">Customers List</h1>
+            <a href="{{ route('customers.create') }}" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Create Customer
+            </a>
+        </div>
 
         <table class="min-w-full bg-gray-700 rounded-md">
             <thead>
