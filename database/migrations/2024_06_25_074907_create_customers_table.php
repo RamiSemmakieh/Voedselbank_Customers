@@ -15,17 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone', 15)->unique();
+            $table->string('phone', 20)->unique();
             $table->integer('number_of_adults');
             $table->integer('number_of_children')->nullable();
             $table->integer('number_of_babies')->nullable();
-            $table->string('street_name', 50);
+            $table->string('street_name');
             $table->integer('house_number');
-            $table->string('postal_code', 10);
-            $table->string('city', 50);
+            $table->string('postal_code');
+            $table->string('city');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
