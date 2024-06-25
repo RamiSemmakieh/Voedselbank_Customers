@@ -1,4 +1,3 @@
-<!-- resources/views/customers/index.blade.php -->
 <x-app-layout>
     <div class="mt-16 max-w-6xl mx-auto p-6 bg-gray-800 rounded-lg shadow-md">
         <div class="flex justify-between items-center mb-4">
