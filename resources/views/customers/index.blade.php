@@ -1,45 +1,35 @@
+<!-- resources/views/customers/index.blade.php -->
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Customers') }}
-        </h2>
-    </x-slot>
+    <div class="mt-16 max-w-6xl mx-auto p-6 bg-gray-800 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-white mb-4">Customers List</h1>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ route('customers.create') }}" class="btn btn-primary">Add Customer</a>
-                    <table class="table mt-4">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($customers as $customer)
-                            <tr>
-                                <td>{{ $customer->name }}</td>
-                                <td>{{ $customer->email }}</td>
-                                <td>{{ $customer->phone }}</td>
-                                <td>
-                                    <a href="{{ route('customers.show', $customer->id) }}" class="btn btn-info">View</a>
-                                    <a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-warning">Edit</a>
-                                    <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" style="display:inline-block;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <table class="min-w-full bg-gray-700 rounded-md">
+            <thead>
+                <tr>
+                    <th class="text-left py-3 px-4 text-white">Name</th>
+                    <th class="text-left py-3 px-4 text-white">Email</th>
+                    <th class="text-left py-3 px-4 text-white">Phone</th>
+                    <th class="text-left py-3 px-4 text-white">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($customers as $customer)
+                <tr class="bg-gray-800 border-b border-gray-700">
+                    <td class="py-3 px-4 text-white">{{ $customer->name }}</td>
+                    <td class="py-3 px-4 text-white">{{ $customer->email }}</td>
+                    <td class="py-3 px-4 text-white">{{ $customer->phone }}</td>
+                    <td class="py-3 px-4 text-white">
+                        <a href="{{ route('customers.show', $customer->id) }}" class="text-blue-500 hover:text-blue-700">View</a>
+                        <a href="{{ route('customers.edit', $customer->id) }}" class="ml-2 text-yellow-500 hover:text-yellow-700">Edit</a>
+                        <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" class="inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="ml-2 text-red-500 hover:text-red-700">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </x-app-layout>
