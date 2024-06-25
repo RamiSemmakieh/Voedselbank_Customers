@@ -1,4 +1,3 @@
-<!-- resources/views/customers/create.blade.php -->
 <x-app-layout>
     <div class="mt-16 max-w-2xl mx-auto p-6 bg-gray-800 rounded-lg shadow-md">
         <h1 class="text-2xl font-bold text-white mb-4">Create Customer</h1>
