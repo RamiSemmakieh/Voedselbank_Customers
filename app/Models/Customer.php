@@ -10,16 +10,8 @@ class Customer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'email',
-        'phone_number',
-        'adults',
-        'children',
-        'babies',
-        'street_name',
-        'house_number',
-        'postal_code',
-        'city',
+        'name', 'email', 'phone', 'number_of_adults', 'number_of_children', 'number_of_babies',
+        'street_name', 'house_number', 'postal_code', 'city'
     ];
 
     public function specialRequests()
