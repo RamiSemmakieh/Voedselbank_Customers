@@ -54,9 +54,9 @@ class CustomerController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:customers,email,' . $customer->id,
             'phone' => 'required|string|max:15|unique:customers,phone,' . $customer->id,
-            'number_of_adults' => 'required|integer',
-            'number_of_children' => 'nullable|integer',
-            'number_of_babies' => 'nullable|integer',
+            'number_of_adults' => 'required|integer|min:0',
+            'number_of_children' => 'nullable|integer|min:0',
+            'number_of_babies' => 'nullable|integer|min:0',
             'street_name' => 'required|string|max:50',
             'house_number' => 'required|integer',
             'postal_code' => 'required|string|max:10',
@@ -68,6 +68,7 @@ class CustomerController extends Controller
         return redirect()->route('customers.index')
             ->with('success', 'Customer updated successfully.');
     }
+
 
     public function destroy(Customer $customer)
     {

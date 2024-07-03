@@ -30,15 +30,15 @@
             </div>
             <div>
                 <label class="block text-sm font-medium text-white">Number of Adults:</label>
-                <input type="number" name="number_of_adults" value="{{ old('number_of_adults', $customer->number_of_adults) }}" class="mt-1 block w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                <input type="number" name="number_of_adults" min="0" value="{{ old('number_of_adults', $customer->number_of_adults) }}" class="mt-1 block w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
             </div>
             <div>
                 <label class="block text-sm font-medium text-white">Number of Children:</label>
-                <input type="number" name="number_of_children" value="{{ old('number_of_children', $customer->number_of_children) }}" class="mt-1 block w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                <input type="number" name="number_of_children" min="0" value="{{ old('number_of_children', $customer->number_of_children) }}" class="mt-1 block w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
             </div>
             <div>
                 <label class="block text-sm font-medium text-white">Number of Babies:</label>
-                <input type="number" name="number_of_babies" value="{{ old('number_of_babies', $customer->number_of_babies) }}" class="mt-1 block w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                <input type="number" name="number_of_babies" min="0" value="{{ old('number_of_babies', $customer->number_of_babies) }}" class="mt-1 block w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
             </div>
             <div>
                 <label class="block text-sm font-medium text-white">Street Name:</label>
